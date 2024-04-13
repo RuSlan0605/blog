@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+    {% for blog in blogs %}
+        <a href="{{ blog.get_absolute_url }}">
+            <img style="width: 300px; height: 300px; margin-left: 50px;
+        border-radius: 10px 10px 10px 10px;
+        box-shadow: 0 0 5px;" 
+        src="{{ blog.image.url }}" 
+        alt="" srcset="">
+        </a>
+    {% endfor %}
+{% endblock %}
