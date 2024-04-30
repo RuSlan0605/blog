@@ -3,18 +3,19 @@
 
 
 {% block content %}
-    {% if user.is_authenticated %}
+    <div style="margin-top: 20px; margin-bottom: 20px; display: flex; gap: 20px;
+    flex-wrap: wrap; justify-content: center;">
         {% for blog in blogs %}
             <a href="{{ blog.get_absolute_url }}">
-                <img style="width: 300px; height: 300px; margin-left: 50px;
+                <img style="
+            width: 300px; 
+            height: 300px; 
             border-radius: 10px 10px 10px 10px;
             box-shadow: 0 0 5px;" 
-            src="{{ blog.image.url }}" 
-            alt="" srcset="">
+            src="{{ blog.image.url }}" alt="" srcset="">
             </a>
         {% endfor %}
-    {% else %}
-        <a href="{% url 'login' %}">Log In</a>
-    {% endif %}
+    </div>
+
 {% endblock %}
 
